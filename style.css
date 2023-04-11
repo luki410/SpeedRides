@@ -786,12 +786,20 @@ footer ul li a
 {
     margin-top: 1rem;
     border: 3px solid white;
-    text-transform: uppercase;
     background-color: transparent;
     color: #FFF;
     padding: 0.75rem 1.25rem;
     position: relative;
     font-weight: 500;
+}
+.subscription .subBtn
+{
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.subscription #email:active
+{
+    background-color: transparent;
 }
 
 @media (min-width: 600px)
