@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>SpeedRides</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logoWhite.png" class="logoImg">
+            <p class="logoText">SPEEDRIDES</p>
+        </div>
+        <nav>
+            <div class="navItem"><a href="#cars" class="active" style="--i:1;">Our Cars</a></div>
+            <div class="navItem"><a href="#rentCar" style="--i:2;">Rent a Car</a></div>
+            <div class="navItem"><a href="#testimonials" style="--i:3;">Opinions</a></div>
+            <div class="navItem"><a href="#faq" style="--i:4;">FAQ</a></div>
+            <div class="navItem"><a href="#" style="--i:5;">Contact</a></div>
+            <div class="navItem"><a style="--i:6;" class="cartIconBig"><img src="img/icons/basket-shopping-solid.svg"></a></div>
+        </nav>
+        <aside>
+            <img src="img/icons/basket-shopping-solid.svg" class="cartIconSmall">
+            <img src="img/icons/bars-solid.svg" class="hamburgerMenu">
+            <ul class="menu">
+                <li><a href="#cars">Our Cars</a></li>
+                <li><a href="#rentCar">Rent a Car</a></li>
+                <li><a href="#testimonials">Opinions</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <ul class="cart">
+                <img src="img/icons/x-solid.svg" class="closeBtn">
+                <li><h1>Shopping cart</h1> </li>
+                <li><h2>Your vehicle: <span class="vehicle">RS8</span></h2></li>
+                <li><h2>Total price: <span class="total">250PLN</span></h2></li>
+                <li><button class="finishBtn">Finish transaction</button></li>
+            </ul>
+        </aside>
+    </header>
+    <section id="cars">
+        <div class="carsContainer">
+            <h4 class="carName">Evolution X</h4>
+            <h1 class="slogan">Experience the Thrill of the Streets</h1>
+            <h3 class="fancy">Find the best car<br> for you</h3>
+            <a href="#">Explore more</a>
+            <img src="img/cars/audi.png" id="carImg">
+        </div>
+    </section>
+    <section id="rentCar">
+        <div class="carDescriptions">
+            <div class="carDesc">
+                <img src="img/icons/dollar-sign-solid.svg">
+                <h1>Affordable Pricing</h1>
+                <p>We understand that the thrill of driving a top-of-the-line vehicle shouldn't come with an exorbitant price tag. That's why we offer competitive pricing and flexible rental options to fit any budget.
+                </p>
+            </div>
+            <div class="carDesc">
+                <img src="img/icons/car-solid.svg" alt="">
+                <h1>Wide Selection</h1>
+                <p>Our website offers an extensive selection of the hottest and most finely-tuned cars on the market, giving you plenty of options to choose from.
+                </p>
+            </div>
+            <div class="carDesc">
+                <img src="img/icons/users-gear-solid.svg" alt="">
+                <h1>Expert Maintenance</h1>
+                <p>Our expert team of mechanics and technicians ensures that every car in our fleet is meticulously maintained and tuned for maximum performance, so you can hit the road with confidence and peace of mind.
+                </p>
+            </div>
+        </div>
+        <section class="rentCar">
+            <div class="rentContainer">
+                <h1>Select your Car</h1>
+                <div class="rentListNames">
+                    <div class="rentCarName"></div>
+                    <div class="rentCarName"></div>
+                    <div class="rentCarName"></div>
+                    <div class="rentCarName active"></div>
+                    <div class="rentCarName"></div>
+                    <div class="rentCarName"></div>
+                </div>
+            </div>
+            <img src="img/cars/audi.png">
+            <div class="rentContainer">
+                <h1>Car statistics</h1>
+                <div class="rentListStats">
+                    <div class="rentCarStat mark">Mark<span>Audi</span></div>
+                    <div class="rentCarStat model">Model<span>RS8</span></div>
+                    <div class="rentCarStat seatCount">Seats<span>3</span></div>
+                    <div class="rentCarStat engine">Engine<span>811</span></div>
+                    <div class="rentCarStat fuel">Fuel<span>Petrol</span></div>
+                    <div class="rentCarStat price">Price<span>350pln/day</span></div>
+                </div>
+            </div>
+        </section>
+        <div class="chooseDate">
+            <h1>Choose date</h1>
+            <div>
+                <div>
+                    <h2>From</h2>
+                    <input type="date" id="dateFrom">
+                </div>
+                <div>
+                    <h2>To</h2>
+                    <input type="date" id="dateTo">
+                </div>
+            </div>
+            <button class="addToCartBtn">Add to cart</button>
+        </div>
+    </section>
+    <section id="testimonials">
+        <div class="testimonialsTitle">
+            <h1>Reviewed by people</h1>
+            <p>Discover the positive impact we've made on the our clients by reading through their testimonials. Our clients have experienced our service and results, and they're eager to share their positive experiences with you.</p>
+        </div>
+        <div class="reviews">
+            <div class="review">
+                <q>I had the time of my life renting a high-performance car from this website. The selection was incredible, and the process was so easy. I'll definitely be renting from them again!</q>
+                <div class="reviewAuthor">
+                    <img src="img/people/human1.jpg" class="profilePicture">
+                    <span>
+                        <h4>Karolina</h4>
+                        <h5>Kracow</h5>
+                    </span>
+                    <img src="img/icons/quote-left-solid.svg" class="quoteIcon">
+                </div>
+            </div>
+            <div class="review">
+                <q>I rented a luxury car for a special occasion and was blown away by the quality and attention to detail. The car was in immaculate condition, and the service was top-notch. I highly recommend this website to anyone looking for an unforgettable driving experience.</q>
+                <div class="reviewAuthor">
+                    <img src="img/people/human2.jpg" class="profilePicture">
+                    <span>
+                        <h4>Józef</h4>
+                        <h5>Warsaw</h5>
+                    </span>
+                    <img src="img/icons/quote-left-solid.svg" class="quoteIcon">
+                </div>
+            </div>
+            <div class="review">
+                <q>I was a little hesitant to rent a sports car, but the team at this website put all my worries to rest. They were so helpful and accommodating, and the car was a dream to drive. I had so much fun and can't wait to do it again!</q>
+                <div class="reviewAuthor">
+                    <img src="img/people/human3.jpg" class="profilePicture">
+                    <span>
+                        <h4>Mikołaj</h4>
+                        <h5>Gdansk</h5>
+                    </span>
+                    <img src="img/icons/quote-left-solid.svg" class="quoteIcon">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="faq">
+        <div class="faqTitle">
+            <h1>Frequently Asked Questions</h1>
+            <p>Frequently Asked Questions About the Car Rental Booking Process on Our Website: Answers to Common Concerns and Inquiries.</p>
+        </div>
+        <div class="accordion">
+            <div class="accordionContent">
+                <div class="accordionTitle">
+                    <span class="title">How old do I have to be to rent a car from your website?</span>
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <p class="description">
+                    To rent a car from our website, you must be at least 21 years old and have a valid driver's license. However, some high-performance vehicles may have additional age requirements.
+                </p>
+            </div>
+            <div class="accordionContent">
+                <div class="accordionTitle">
+                    <span class="title">How long can I rent a car for?</span>
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <p class="description">
+                    We offer flexible rental options to fit your schedule and needs. Our rentals can range from a single day to several weeks, depending on your preferences. Contact us for more information on our rental options.
+                </p>
+            </div>
+            <div class="accordionContent">
+                <div class="accordionTitle">
+                    <span class="title">What happens if I damage the car during the rental period?</span>
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <p class="description">
+                    We understand that accidents happen, and we have a comprehensive insurance policy to protect both you and our vehicles. If you damage the car during the rental period, please contact us immediately to report the incident and we will provide you with guidance on the next steps to take. Additional charges may apply depending on the extent of the damage.
+                </p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footerContact">
+            <h1>Car Rental</h1>
+            <p>We offers a big range of vehicles for all your driving needs. We have the perfect car to meet your needs.</p>
+            <div class="contactInfo">
+                <div class="phone">
+                    <i class="fa-solid fa-phone"></i>
+                    <p>123 456 789</p>
+                </div>
+                <div class="email">
+                    <i class="fa-solid fa-envelope"></i>
+                    speedrides@gmail.com
+                </div>
+                <p>Designed by Łukasz Pezda</p>
+            </div>
+        </div>
+        <ul>
+            <li><a href="">Company</a></li>
+            <li><a href="">Warsaw</a></li>
+            <li><a href="">Carrers</a></li>
+            <li><a href="">Mobile</a></li>
+            <li><a href="">Blog</a></li>
+            <li><a href="">How we work</a></li>
+        </ul>
+        <div class="hours">
+            <h1>Working hours</h1>
+            <p>Mon - Fri: 9:00AM - 9:00PM</p>
+            <p>Sat: 9:00AM - 7:00PM</p>
+            <p>Sun: Closed</p>
+        </div>
+        <div class="subscription">
+            <h1>Subscription</h1>
+            <p>Subscribe your Email address for latest news & updates.</p>
+            <input type="text" value="Enter your email">
+            <input type="submit" value="Submit">
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>

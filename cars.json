@@ -1,0 +1,63 @@
+{ "cars": [
+        {
+            "id": 1,
+            "mark": "Mitsubishi",
+            "model": "Evolution X",
+            "seatCount": "5",
+            "engine": "236",
+            "fuel": "Petrol",
+            "price": 100,
+            "img": "evo.png"
+        },
+        {
+            "id": 2,
+            "mark": "BMW",
+            "model": "M5",
+            "seatCount": "5",
+            "engine": "298",
+            "fuel": "Diesel",
+            "price": 120,
+            "img": "m5.png"
+        },
+        {
+            "id": 3,
+            "mark": "Ford",
+            "model": "Mustang",
+            "seatCount": "5",
+            "engine": "543",
+            "fuel": "Petrol",
+            "price": 200,
+            "img": "mustang.png"
+        },
+        {
+            "id": 4,
+            "mark": "Audi",
+            "model": "RS8",
+            "seatCount": "3",
+            "engine": "811",
+            "fuel": "Petrol",
+            "price": 350,
+            "img": "audi.png"
+        },
+        {
+            "id": 5,
+            "mark": "Subaru",
+            "model": "Impreza",
+            "seatCount": "5",
+            "engine": "178",
+            "fuel": "Petrol",
+            "price": 80,
+            "img": "subaru.png"
+        },
+        {
+            "id": 6,
+            "mark": "Nissan",
+            "model": "GTR 35",
+            "seatCount": "2",
+            "engine": "684",
+            "fuel": "Petrol",
+            "price": 220,
+            "img": "gtr.png"
+        }
+    ]
+}
