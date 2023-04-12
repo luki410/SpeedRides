@@ -521,14 +521,14 @@ input[type="date"]::-webkit-calendar-picker-indicator
 {
     height: 100%;
 }
-.rentCar .warning
+.chooseDate .warning
 {
     border: 3px solid #FF4040;
     color: #FF4040;
 }
 .modal
 {
-    /* display: none; */
+    display: none;
     position: fixed;
     z-index: 100;
     left: 0;

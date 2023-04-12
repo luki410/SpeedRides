@@ -5,6 +5,7 @@ fetch('cars.json')
   .then(data => {
     carArray = data.cars;
 
+    //car carousel
     const changeCars = setInterval(() => {
       carImg.style.opacity = 0;
       const fadeIn = setInterval(function() {
@@ -14,12 +15,15 @@ fetch('cars.json')
         }
       }, 50);
       
+
+      //initial car
       carImg.src = `img/cars/${carArray[carIndex%carArray.length].img}`;
       carName.textContent = carArray[carIndex%carArray.length].model;
       carIndex++;
     }, 7000)
 
 
+    //set car name and car stats
     rentCarNames.forEach((rentCarName) => {
       rentCarName.textContent = carArray[carNameIndex].model;
       const carId = carArray[carNameIndex].id - 1;
@@ -90,40 +94,14 @@ hamburgerMenu.addEventListener("click", () => {
   },100)
 })
 
-const cartMenuSmall = document.querySelector(".cartIconSmall")
-const cartMenuBig = document.querySelector(".cartIconBig")
-const asideCart = document.querySelector("aside .cart")
-
-cartMenuSmall.addEventListener("click", () => {
-  asideCart.style.width = "100%";
-  asideCart.classList.add("active");
-  hamburgerMenu.classList.add("hidden")
-  cartMenuSmall.classList.add("hidden")
-})
-
-cartMenuBig.addEventListener("click", () => {
-  asideCart.style.width = "40%";
-  asideCart.parentElement.style.display = "block";
-  asideCart.classList.add("active");
-  hamburgerMenu.classList.add("hidden")
-  cartMenuSmall.classList.add("hidden")
-})
-
 const closeBtn = document.querySelector(".closeBtn")
 
-closeBtn.addEventListener("click", () => {
-  asideCart.classList.remove("active");
-  if(window.screen.width > 900)
-  {
-    asideCart.parentElement.style.display = "none";
-  }
-  hamburgerMenu.classList.remove("hidden")
-  cartMenuSmall.classList.remove("hidden")
-})
-
+//get days count for rent
 const dateFrom = document.querySelector("#dateFrom")
 const dateTo = document.querySelector("#dateTo")
 const cartBtn = document.querySelector(".addToCartBtn")
+
+const modal = document.querySelector(".modal")
 
 let daysReserved = 0;
 
@@ -134,7 +112,13 @@ cartBtn.addEventListener("click", () => {
   const DateFrom = new Date(valueFrom)
   const DateTo = new Date(valueTo)
 
-  if(DateFrom > DateTo)
+  if(isNaN(DateFrom))
+  {
+    console.log(DateFrom)
+  }
+  
+  //check if date is valid
+  if(DateFrom > DateTo || isNaN(DateFrom) || isNaN(DateTo))
   {
     cartBtn.textContent = "Wrong date"
     cartBtn.classList.add("warning")
@@ -143,12 +127,29 @@ cartBtn.addEventListener("click", () => {
       cartBtn.textContent = "Add to cart"
       cartBtn.classList.remove("warning")
     }, 3000)
-  } else
+  }
+  //set days count and open modal
+  else
   {
     const timeReserved = DateTo - DateFrom + 1;
     daysReserved = Math.ceil(timeReserved / 86400000)
+
+    modal.style.display = "block"
   }
 })
+//close modal
+const closeModal = document.querySelector(".modalTitle i")
+
+closeModal.addEventListener("click", () => {
+  modal.style.display = "none";
+})
+
+window.onclick = (e) => {
+  if (e.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
 
 //FAQ 
 const accordionContent = document.querySelectorAll(".accordionContent");
