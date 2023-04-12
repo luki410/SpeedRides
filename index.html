@@ -78,7 +78,7 @@
             <div class="rentContainer">
                 <h1>Select your Car</h1>
                 <div class="rentListNames">
-                    <div class="rentCarName"></div>
+                    <div class="rentCarName"></div> 
                     <div class="rentCarName"></div>
                     <div class="rentCarName"></div>
                     <div class="rentCarName active"></div>
@@ -112,6 +112,72 @@
                 </div>
             </div>
             <button class="addToCartBtn">Add to cart</button>
+        </div>
+        <div class="modal">
+            <div class="modalContent">
+                <div class="modalTitle">
+                    <h1>Complete reservation</h1>
+                    <i class="fa-solid fa-x"></i>
+                </div>
+                <div class="modalInfo">
+                    <h3><i class="fa-solid fa-circle-info"></i>Upon completing this reservation enquiry, you will receive:</h3>
+                    <p>Your rental voucher to produce on arrival at the rental desk and a toll-free customer support number.</p>
+                </div>
+                <div class="modalCarInfo">
+                    <div class="modalCarInfoContent">
+                        <h2>Date & Price</h2>
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div>
+                                <h5>Pick-Up Date</h5>
+                                <p>12-04-2023</p>
+                            </div>
+                        </span>
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div>
+                                <h5>Drop-Off Date</h5>
+                                <p>12-04-2023</p>
+                            </div>
+                        </span>
+                        <span>
+                            <i class="fa-solid fa-dollar-sign"></i>
+                            <div>
+                                <h5>Price</h5>
+                                <p>250pln</p>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="modalCarImg">
+                        <h2>Car - RS8</h2>
+                        <img src="img/cars/audi.png">
+                    </div>
+                </div>
+                <div class="modalForm">
+                    <h2>Personal Information</h2>
+                    <form>
+                        <label for="firstName">First Name <b>*</b></label>
+                        <input type="text" id="firstName" placeholder="Enter your first name" required>
+                        <label for="lastName">Last Name <b>*</b></label>
+                        <input type="text" id="lastName" placeholder="Enter your last name" required>
+                        <label for="phone">Phone number</label>
+                        <input type="text" id="phone" placeholder="Enter your phone number">
+                        <label for="age">Age <b>*</b></label>
+                        <input type="number" id="age" placeholder="21" required>
+                        <label for="email">Email <b>*</b></label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                        <label for="city">City <b>*</b></label>
+                        <input type="text" id="city" placeholder="Enter your city" required>
+                        <label for="postalCode">Postal code <b>*</b></label>
+                        <input type="text" id="postalCode" placeholder="Enter your postal code" required>
+                        <div>
+                            <input type="checkbox" id="updates">
+                            <label for="updates">Please send me latest news and updates</label>
+                        </div>
+                        <input type="submit" value="Reserve Now" id="submitBtn">
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
     <section id="testimonials">
