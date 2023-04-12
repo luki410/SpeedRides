@@ -546,6 +546,7 @@ input[type="date"]::-webkit-calendar-picker-indicator
     align-items: center;
     justify-content: center;
     background-color: #fff;
+    max-width: 900px;
 }
 .modalContent h2
 {
@@ -565,6 +566,7 @@ input[type="date"]::-webkit-calendar-picker-indicator
 .modalContent .modalTitle i
 {
     font-size: 1.5rem;
+    cursor: pointer;
 }
 .modalInfo
 {
@@ -630,7 +632,8 @@ input[type="date"]::-webkit-calendar-picker-indicator
 }
 .modalCarImg img
 {
-    width: 100vw;
+    width: 100%;
+    max-width: 400px;
     padding: 3rem 1rem;
 }
 .modalForm
@@ -646,21 +649,25 @@ input[type="date"]::-webkit-calendar-picker-indicator
     display: flex;
     flex-direction: column;
 }
+.modal form div span
+{
+    display: flex;
+    flex-direction: column;
+}
 .modalForm form label
 {
     font-size: 1.2rem;
     padding-top: 1rem;
     padding-bottom: 0.5rem;
 }
-.modalForm form div
-{
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
 .modalForm form input
 {
     font-size: 1rem;
     padding: 0.75rem 1rem;
+}
+.modalForm .newsletter
+{
+    padding: 1rem 0;
 }
 .modalForm form b
 {
@@ -676,8 +683,8 @@ input[type="date"]::-webkit-calendar-picker-indicator
     color: #FF4040;
     border: 3px solid var(--dark3);
     background-color: transparent;
+    cursor: pointer;
 }
-
 
 #testimonials
 {
@@ -1060,9 +1067,29 @@ footer ul li a
     {
         width: 50%;
     }
+    .modalContent
+    {
+        margin: 100px 0;
+    }
+    .modalCarInfo
+    {
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: row;
+    }
+    .modalCarImg
+    {
+        width: 50%;
+        border: none;
+        padding-top: 2rem;
+    }
+    .col2
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 1rem;
+    }
 }
-
-
 
 @media (min-width: 900px)
 {
@@ -1165,6 +1192,11 @@ footer ul li a
     .email
     {
         justify-content: flex-start;
+    }
+    .modalContent
+    {
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 @media (min-width: 1200px)
