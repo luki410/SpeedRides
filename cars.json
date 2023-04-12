@@ -7,7 +7,7 @@
             "engine": "236",
             "fuel": "Petrol",
             "price": 100,
-            "img": "evo.png"
+            "img": "evo.webp"
         },
         {
             "id": 2,
@@ -17,7 +17,7 @@
             "engine": "298",
             "fuel": "Diesel",
             "price": 120,
-            "img": "m5.png"
+            "img": "m5.webp"
         },
         {
             "id": 3,
@@ -27,7 +27,7 @@
             "engine": "543",
             "fuel": "Petrol",
             "price": 200,
-            "img": "mustang.png"
+            "img": "mustang.webp"
         },
         {
             "id": 4,
@@ -37,7 +37,7 @@
             "engine": "811",
             "fuel": "Petrol",
             "price": 350,
-            "img": "audi.png"
+            "img": "audi.webp"
         },
         {
             "id": 5,
@@ -47,7 +47,7 @@
             "engine": "178",
             "fuel": "Petrol",
             "price": 80,
-            "img": "subaru.png"
+            "img": "subaru.webp"
         },
         {
             "id": 6,
@@ -57,7 +57,7 @@
             "engine": "684",
             "fuel": "Petrol",
             "price": 220,
-            "img": "gtr.png"
+            "img": "gtr.webp"
         }
     ]
 }
