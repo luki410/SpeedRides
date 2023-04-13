@@ -224,3 +224,45 @@ menuItems.forEach(item => {
     });
   });
 });
+
+const animateLeft = document.querySelectorAll('.animateOnScrollLeft');
+const animateRight = document.querySelectorAll('.animateOnScrollRight');
+const animateTop = document.querySelectorAll('.animateOnScrollTop');
+const animateBottom = document.querySelectorAll('.animateOnScrollBottom');
+
+function animateOnScroll() {
+  animateLeft.forEach((element) => {
+    const elementPosition = element.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+
+    if (elementPosition.top < viewportHeight && elementPosition.bottom >= 0) {
+      element.classList.add('slideLeft');
+    }
+  });
+  animateRight.forEach((element) => {
+    const elementPosition = element.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+
+    if (elementPosition.top < viewportHeight && elementPosition.bottom >= 0) {
+      element.classList.add('slideRight');
+    }
+  });
+  animateTop.forEach((element) => {
+    const elementPosition = element.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+
+    if (elementPosition.top < viewportHeight && elementPosition.bottom >= 0) {
+      element.classList.add('slideTop');
+    }
+  });
+  animateBottom.forEach((element) => {
+    const elementPosition = element.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+
+    if (elementPosition.top < viewportHeight && elementPosition.bottom >= 0) {
+      element.classList.add('slideBottom');
+    }
+  });
+}
+
+window.addEventListener('scroll', animateOnScroll);

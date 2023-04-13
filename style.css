@@ -381,8 +381,7 @@ aside .cartIconSmall
     text-align: center;
     padding: 0 1rem;
     line-height: 1.75rem;
-    color: #FFF;
-    opacity: 0.6;
+    color: rgba(255,255,255,0.6);
 }
 
 .rentCar
@@ -729,8 +728,7 @@ input[type="date"]::-webkit-calendar-picker-indicator
     font-size: 1.1rem;
     font-weight: 200;
     line-height: 1.75rem;
-    color: #FFF;
-    opacity: 0.6;
+    color: rgba(255,255,255,0.6);
 }
 .reviews
 {
@@ -812,8 +810,7 @@ input[type="date"]::-webkit-calendar-picker-indicator
     font-size: 1.1rem;
     font-weight: 200;
     line-height: 1.75rem;
-    color: #FFF;
-    opacity: 0.6;
+    color: rgba(255,255,255,0.6);
 }
 .accordion
 {
@@ -1296,12 +1293,16 @@ footer ul li a
     }
 }
 
+.slideTop
+{
+    animation: slideTop 500ms;
+}
 @keyframes slideTop
 {
     from
     {
         opacity: 0;
-        transform: translateY(-300px);
+        transform: translateY(-150px);
     }
     to
     {
@@ -1309,12 +1310,16 @@ footer ul li a
         transform: translateY(0);
     }
 }
+.slideLeft
+{
+    animation: slideLeft 500ms;
+}
 @keyframes slideLeft
 {
     from
     {
         opacity: 0;
-        transform: translateX(-300px);
+        transform: translateX(-150px);
     }
     to
     {
@@ -1322,12 +1327,16 @@ footer ul li a
         transform: translateX(0);
     }
 }
+.slideBottom
+{
+    animation: slideBottom 500ms;
+}
 @keyframes slideBottom
 {
     from
     {
         opacity: 0;
-        transform: translateY(300px);
+        transform: translateY(150px);
     }
     to
     {
@@ -1335,14 +1344,20 @@ footer ul li a
         transform: translateY(0);
     }
 }
+.slideRight
+{
+    animation: slideRight 500ms;
+}
 @keyframes slideRight
 {
     from
     {
-        transform: translateX(300px);
+        opacity: 0;
+        transform: translateX(150px);
     }
     to
     {
+        opacity: 1;
         transform: translateY(0);
     }
 }
@@ -1356,4 +1371,28 @@ footer ul li a
     {
         opacity: 1;
     }
+}
+.animateOnScrollLeft
+{
+    opacity: 0;
+    animation-delay: calc(200ms * var(--j));
+    animation-fill-mode: forwards;
+}
+.animateOnScrollRight
+{
+    opacity: 0;
+    animation-delay: calc(200ms * var(--j));
+    animation-fill-mode: forwards;
+}
+.animateOnScrollTop
+{
+    opacity: 0;
+    animation-delay: calc(200ms * var(--j));
+    animation-fill-mode: forwards;
+}
+.animateOnScrollBottom
+{
+    opacity: 0;
+    animation-delay: calc(200ms * var(--j));
+    animation-fill-mode: forwards;
 }
