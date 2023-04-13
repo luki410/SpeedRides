@@ -198,3 +198,29 @@ function removeOpen(index1){
         }
     })
 }
+
+// Get all the menu items
+const menuItems = document.querySelectorAll('.menu a, .navItem a');
+
+// Add click event listeners to each menu item
+menuItems.forEach(item => {
+  item.addEventListener('click', e => {
+    // Prevent default link behavior
+    e.preventDefault();
+
+    // Get the target section ID from the href attribute
+    const targetId = item.getAttribute('href');
+
+    // Get the target section element
+    const targetSection = document.querySelector(targetId);
+
+    // Calculate the position to scroll to
+    const position = targetSection.getBoundingClientRect().top + window.pageYOffset - 100;
+
+    // Scroll to the target position
+    window.scrollTo({
+      top: position,
+      behavior: 'smooth'
+    });
+  });
+});
