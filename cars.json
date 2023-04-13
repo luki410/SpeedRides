@@ -2,12 +2,12 @@
         {
             "id": 1,
             "mark": "Mitsubishi",
-            "model": "Evolution X",
+            "model": "Evolution",
             "seatCount": "5",
             "engine": "236",
             "fuel": "Petrol",
             "price": 100,
-            "img": "evo.webp"
+            "img": "Evolution.webp"
         },
         {
             "id": 2,
@@ -17,7 +17,7 @@
             "engine": "298",
             "fuel": "Diesel",
             "price": 120,
-            "img": "m5.webp"
+            "img": "M5.webp"
         },
         {
             "id": 3,
@@ -27,7 +27,7 @@
             "engine": "543",
             "fuel": "Petrol",
             "price": 200,
-            "img": "mustang.webp"
+            "img": "Mustang.webp"
         },
         {
             "id": 4,
@@ -37,7 +37,7 @@
             "engine": "811",
             "fuel": "Petrol",
             "price": 350,
-            "img": "audi.webp"
+            "img": "RS8.webp"
         },
         {
             "id": 5,
@@ -47,17 +47,17 @@
             "engine": "178",
             "fuel": "Petrol",
             "price": 80,
-            "img": "subaru.webp"
+            "img": "Impreza.webp"
         },
         {
             "id": 6,
             "mark": "Nissan",
-            "model": "GTR 35",
+            "model": "GTR35",
             "seatCount": "2",
             "engine": "684",
             "fuel": "Petrol",
             "price": 220,
-            "img": "gtr.webp"
+            "img": "GTR35.webp"
         }
     ]
 }

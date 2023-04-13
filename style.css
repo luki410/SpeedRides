@@ -495,7 +495,7 @@ input[type="date"]::-webkit-calendar-picker-indicator
     text-transform: uppercase;
     background-color: transparent;
     color: #FFF;
-    padding: 0.75rem 1.25rem;
+    padding: 0.75rem 3rem;
     position: relative;
     z-index: 1;
     font-weight: 500;
@@ -510,7 +510,7 @@ input[type="date"]::-webkit-calendar-picker-indicator
     left: 0;
     transition: 400ms ease-in-out;
     background-color: #fff;
-    z-index: -1;
+    z-index: -2;
 }
 .addToCartBtn:hover
 {
@@ -524,7 +524,19 @@ input[type="date"]::-webkit-calendar-picker-indicator
 .chooseDate .warning
 {
     border: 3px solid #FF4040;
-    color: #FF4040;
+    color: #FFF;
+    background-color: #FF4040;
+}
+.chooseDate .warning::before
+{
+    content: '';
+    height: 0%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #FF4040;
+    z-index: -2;
 }
 .modal
 {
@@ -1077,7 +1089,7 @@ footer ul li a
     }
     .modalCarInfo
     {
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-evenly;
         flex-direction: row;
     }

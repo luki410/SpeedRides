@@ -46,16 +46,59 @@ fetch('cars.json')
       })
       carNameIndex++
     })
-
+    
+    let selectedCar = 3;
     cartBtn.addEventListener("click", () => {
-      vehicle.textContent = model.textContent
-      totalPrice.textContent = Number(price.textContent.slice(0,-7)) * daysReserved + "pln"
 
-      cartMenuBig.classList.add("itemInCart")
-    })
+      const valueFrom = dateFrom.value;
+      const valueTo = dateTo.value;
+
+      const DateFrom = new Date(valueFrom)
+      const DateTo = new Date(valueTo)
+
+      const formatedDateFrom = `${DateFrom.getDate()}-${DateFrom.getMonth()}-${DateFrom.getFullYear()}`;
+      const formatedDateTo = `${DateTo.getDate()}-${DateTo.getMonth()}-${DateTo.getFullYear()}`;
+
+      const activeCar = document.querySelector(".rentListNames .active")
+      
+      //check if date is valid
+      if(DateFrom > DateTo || DateFrom > today || isNaN(DateFrom) || isNaN(DateTo))
+      {
+        cartBtn.textContent = "Wrong date"
+        cartBtn.classList.add("warning")
+        daysReserved = 0;
+        setTimeout(() => {
+          cartBtn.textContent = "Reserve now"
+          cartBtn.classList.remove("warning")
+        }, 3000)
+      }
+      else
+      {
+        //set days count
+        const timeReserved = DateTo - DateFrom + 1;
+        daysReserved = Math.ceil(timeReserved / 86400000)
+
+        //set modal values
+        pickUpDate.textContent = formatedDateFrom;
+        dropOffDate.textContent = formatedDateTo;
+        totalPrice.textContent = `${Number(daysReserved) * Number(carArray[activeCar.dataset.id - 1].price)}pln`;
+        modalImg.src = `img/cars/${activeCar.textContent}.webp`;
+        modalCarName.textContent = `CAR - ${activeCar.textContent}`
+
+        //open modal
+        modal.style.display = "block"
+      }
+      console.log()
+    })    
 
     })
   .catch(error => console.error(error));
+
+const pickUpDate = document.querySelector("#pickUpDate")
+const dropOffDate = document.querySelector("#dropOffDate")
+const totalPrice = document.querySelector("#price")
+const modalImg = document.querySelector(".modalCarImg img")
+const modalCarName = document.querySelector(".modalCarImg h2")
 
 const carImg = document.querySelector("#carImg");
 const carName = document.querySelector(".carName");
@@ -73,9 +116,6 @@ const fuel = document.querySelector(".fuel span")
 const price = document.querySelector(".price span")
 const rentCarImg = document.querySelector(".rentCar img")
 let carStatIndex = 0;
-
-const totalPrice = document.querySelector(".total")
-const vehicle = document.querySelector(".vehicle")
 
 const hamburgerMenu = document.querySelector(".hamburgerMenu")
 const asideMenu = document.querySelector("aside .menu")
@@ -100,45 +140,21 @@ const closeBtn = document.querySelector(".closeBtn")
 const dateFrom = document.querySelector("#dateFrom")
 const dateTo = document.querySelector("#dateTo")
 const cartBtn = document.querySelector(".addToCartBtn")
-
-const modal = document.querySelector(".modal")
-
 let daysReserved = 0;
 
-cartBtn.addEventListener("click", () => {
-  const valueFrom = dateFrom.value;
-  const valueTo = dateTo.value;
+//set input date to today
+let today = new Date().toISOString().substr(0, 10);
+dateFrom.value = today
 
-  const DateFrom = new Date(valueFrom)
-  const DateTo = new Date(valueTo)
+const modal = document.querySelector(".modal")
+const sumbitBtn = document.querySelector("#submitBtn")
 
-  if(isNaN(DateFrom))
-  {
-    console.log(DateFrom)
-  }
-  
-  //check if date is valid
-  if(DateFrom > DateTo || isNaN(DateFrom) || isNaN(DateTo))
-  {
-    cartBtn.textContent = "Wrong date"
-    cartBtn.classList.add("warning")
-    daysReserved = 0;
-    setTimeout(() => {
-      cartBtn.textContent = "Add to cart"
-      cartBtn.classList.remove("warning")
-    }, 3000)
-  }
-  //set days count and open modal
-  else
-  {
-    const timeReserved = DateTo - DateFrom + 1;
-    daysReserved = Math.ceil(timeReserved / 86400000)
-
-    modal.style.display = "block"
-  }
-})
 //close modal
 const closeModal = document.querySelector(".modalTitle i")
+
+sumbitBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+})
 
 closeModal.addEventListener("click", () => {
   modal.style.display = "none";
