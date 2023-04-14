@@ -87,12 +87,16 @@ fetch('cars.json')
 
         //open modal
         modal.style.display = "block"
+        body.style.overflow = 'hidden'
       }
       console.log()
     })    
 
     })
   .catch(error => console.error(error));
+
+
+const body = document.getElementsByTagName('body')[0];
 
 const pickUpDate = document.querySelector("#pickUpDate")
 const dropOffDate = document.querySelector("#dropOffDate")
@@ -154,15 +158,21 @@ const closeModal = document.querySelector(".modalTitle i")
 
 sumbitBtn.addEventListener("click", () => {
   modal.style.display = "none";
+        body.style.overflow = 'auto'
+  
 })
 
 closeModal.addEventListener("click", () => {
   modal.style.display = "none";
+        body.style.overflow = 'auto'
+  
 })
 
 window.onclick = (e) => {
   if (e.target == modal) {
     modal.style.display = "none";
+        body.style.overflow = 'auto'
+    
   }
 }
 
@@ -216,6 +226,14 @@ menuItems.forEach(item => {
     });
   });
 });
+
+const logo = document.querySelector(".logo")
+
+logo.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+  });
+})
 
 
 //page animations

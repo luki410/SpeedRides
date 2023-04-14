@@ -39,6 +39,12 @@ header
     background-color: var(--dark1);
     color: #FFF;
     z-index: 10;
+    transition: 500ms ease-in-out;
+}
+header.hidden
+{
+    transition: 500ms ease-in-out;
+    transform: translateY(-100%);
 }
 .logo
 {
@@ -50,6 +56,7 @@ header
     gap: 2rem;
     font-size: 1.75rem;
     background-color: var(--dark2);
+    cursor: pointer;
 }
 .logoImg
 {
@@ -419,6 +426,10 @@ aside .cartIconSmall
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
 }
+.rentCarName
+{
+    cursor: pointer;
+}
 .rentListNames .rentCarName,
 .rentListStats .rentCarStat
 {
@@ -474,6 +485,7 @@ aside .cartIconSmall
     flex-direction: column;
     gap: 1rem;
 }
+
 #dateFrom,
 #dateTo
 {
@@ -482,6 +494,7 @@ aside .cartIconSmall
     border-radius: 0;
     padding: 0.5rem 0.75rem;;
     color: #FFF;
+    cursor: pointer;
 }
 input[type="date"]::-webkit-calendar-picker-indicator
 {
