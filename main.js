@@ -89,7 +89,6 @@ fetch('cars.json')
         modal.style.display = "block"
         body.style.overflow = 'hidden'
       }
-      console.log()
     })    
 
     })
@@ -124,6 +123,7 @@ let carStatIndex = 0;
 const hamburgerMenu = document.querySelector(".hamburgerMenu")
 const asideMenu = document.querySelector("aside .menu")
 
+//open aside menu on mobile
 hamburgerMenu.addEventListener("click", () => {
   asideMenu.classList.toggle("active");
   setTimeout(() => {
@@ -137,6 +137,26 @@ hamburgerMenu.addEventListener("click", () => {
     }
   },100)
 })
+
+//hide menu on item click
+const asideMenuItems = document.querySelectorAll(".menu a")
+
+asideMenuItems.forEach(menuItem => {
+  menuItem.addEventListener("click", () => {
+    asideMenu.classList.toggle("active");
+    setTimeout(() => {
+      if(asideMenu.classList.contains("active"))
+      {
+        hamburgerMenu.src = "img/icons/x-solid.svg";
+      }
+      else
+      {
+        hamburgerMenu.src = "img/icons/bars-solid.svg";
+      }
+    },100)
+  })
+})
+
 
 const closeBtn = document.querySelector(".closeBtn")
 
