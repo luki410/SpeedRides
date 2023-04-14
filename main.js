@@ -34,7 +34,7 @@ fetch('cars.json')
         seatCount.textContent = carArray[carId].seatCount;
         engine.textContent = carArray[carId].engine + "hp";
         fuel.textContent = carArray[carId].fuel;
-        price.textContent = carArray[carId].price + "pln/day";
+        carPrice.textContent = carArray[carId].price + "pln/day";
         rentCarImg.src = `img/cars/${carArray[carId].img}`;
         
         rentCarNames.forEach((carName) => {
@@ -81,7 +81,7 @@ fetch('cars.json')
         //set modal values
         pickUpDate.textContent = formatedDateFrom;
         dropOffDate.textContent = formatedDateTo;
-        totalPrice.textContent = `${Number(daysReserved) * Number(carArray[activeCar.dataset.id - 1].price)}pln`;
+        totalPrice.textContent = `${Number(daysReserved) * Number(carArray[activeCar.dataset.id].price)}pln`;
         modalImg.src = `img/cars/${activeCar.textContent}.webp`;
         modalCarName.textContent = `CAR - ${activeCar.textContent}`
 
@@ -113,7 +113,7 @@ const model = document.querySelector(".model span")
 const seatCount = document.querySelector(".seatCount span")
 const engine = document.querySelector(".engine span")
 const fuel = document.querySelector(".fuel span")
-const price = document.querySelector(".price span")
+const carPrice = document.querySelector(".price span")
 const rentCarImg = document.querySelector(".rentCar img")
 let carStatIndex = 0;
 
@@ -199,32 +199,26 @@ function removeOpen(index1){
     })
 }
 
-// Get all the menu items
+//scrolling
 const menuItems = document.querySelectorAll('.menu a, .navItem a');
 
-// Add click event listeners to each menu item
+
 menuItems.forEach(item => {
   item.addEventListener('click', e => {
-    // Prevent default link behavior
     e.preventDefault();
 
-    // Get the target section ID from the href attribute
     const targetId = item.getAttribute('href');
-
-    // Get the target section element
     const targetSection = document.querySelector(targetId);
-
-    // Calculate the position to scroll to
     const position = targetSection.getBoundingClientRect().top + window.pageYOffset - 100;
 
-    // Scroll to the target position
     window.scrollTo({
       top: position,
-      behavior: 'smooth'
     });
   });
 });
 
+
+//page animations
 const animateLeft = document.querySelectorAll('.animateOnScrollLeft');
 const animateRight = document.querySelectorAll('.animateOnScrollRight');
 const animateTop = document.querySelectorAll('.animateOnScrollTop');
@@ -264,5 +258,25 @@ function animateOnScroll() {
     }
   });
 }
-
 window.addEventListener('scroll', animateOnScroll);
+
+
+//active class in nav
+document.querySelector('.navItem:first-child a').classList.add('active');
+
+window.addEventListener('scroll',() => {
+  let scrollPosition = window.scrollY;
+
+  document.querySelectorAll('section').forEach((section) => {
+    let sectionTop = section.offsetTop - 200;
+    let sectionBottom = sectionTop + section.offsetHeight;
+    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+      let sectionId = section.getAttribute('id');
+
+      document.querySelectorAll('.navItem a').forEach((navItem) => {
+        navItem.classList.remove('active');
+      });
+      document.querySelector('.navItem a[href="#' + sectionId + '"]').classList.add('active');
+    }
+  });
+});
